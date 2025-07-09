@@ -1,19 +1,26 @@
-:root{
-    --Tt-h1:"Rubik Glitch", system-ui;
-    --p-booy:"Caveat Brush", cursive;
+:root {
+    --Tt-h1: "Rubik Glitch", system-ui;
+    --p-booy: "Caveat Brush", cursive;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: var(--p-booy) !important;
 
 }
 
-.banner{
+p {
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
     height: calc(100vw * 0.5625);
     min-height: 32rem;
     background: url(../img/banner/Akatsuki.jpg);
@@ -21,14 +28,15 @@ body{
     background-position: center;
 }
 
-.navbar{
+.navbar {
     display: flex;
     position: fixed;
     width: 100%;
 }
 
 
-.navbar ul, li{ 
+.navbar ul,
+li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,13 +49,13 @@ body{
     cursor: pointer;
 }
 
-.navbar > img{
+.navbar>img {
     background-color: rgb(255, 255, 255);
     margin: 1.0rem;
     margin: 1rem auto;
 }
 
-#hd{
+#hd {
     color: rgb(255, 255, 255);
     font-family: var(--Tt-h1);
     text-align: center;
@@ -55,72 +63,126 @@ body{
     padding: 0;
     margin: 0;
     text-shadow: 2px 3px 3px rgb(253, 0, 0),
-    -2px -3px 3px rgb(0, 0, 0), 0 0 5px rgb(255, 0, 0);
+        -2px -3px 3px rgb(0, 0, 0), 0 0 5px rgb(255, 0, 0);
 }
 
-p{
-    text-align: center;
-    margin: 0;
-    font-size: 26px;
-}
 
-#info{
+
+#info {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 2rem auto;
     padding: 1rem;
+    max-width: 1000px;
+    cursor: pointer;
 }
 
-#info article{
+#info article {
     width: 100%;
-    height: 100px;
+    height: 150px;
     margin: 0 0.5rem;
     max-width: 800px;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-4 {
+    max-width: 90rem;
+    margin: 4rem auto;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-4 article {
+    border: solid 1px gray;
+    width: calc(25% - 10px);
+    height: 200px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--p-booy);
+    color: black;
+    cursor: pointer;
+}
+
+.card-4 article:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 6, 6, 0.9);
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+    padding: 1.5rem;
+    border-radius: 15px;
 }
 
 
 
 @media screen and (max-width: 768px) {
-    .navbar ul, li{
+
+
+    body {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    #pr {
+        font-family: var(--p-booy);
+        font-size: 18px;
+    }
+
+    .navbar ul,
+    li {
         flex-direction: column;
         padding: 0.5rem;
     }
 
 
-    #hd{
+    #hd {
         font-size: 2em;
     }
 
-    #info{
+    #info {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         margin: 3rem auto;
         padding: 0.5rem;
         width: 90%;
         max-width: 600px;
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-align: center;
     }
 
-    #infor article{
-        width: 90%;
-        margin: 100em;
+    #info article {
+        width: 100%;
+        height: auto;
+        margin: 0.5rem 0;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    
-    body{
-        font-size: 18px;
-    }
-    
-    .banner{
+
+    .banner {
         height: calc(100vw * 0.5625);
         min-height: 20rem;
         background-image: url(../img/banner/akatsuki-capa.webp);
@@ -130,37 +192,40 @@ p{
         background-size: cover;
         background-position: center;
     }
-    
+
 }
 
 @media screen and (max-width: 480px) {
-    .navbar ul, li{
+
+    .navbar ul,
+    li {
         flex-direction: column;
         padding: 0.5rem;
     }
-    
-    #hd{
+
+    #hd {
         font-size: 1.5em;
     }
-    
-    body{
+
+    body {
         font-size: 16px;
     }
 
-    p{
+    p {
         font-size: 14px;
     }
-    
-    .banner{
+
+    .banner {
         height: calc(100vw * 0.5625);
         min-height: 15rem;
 
 
         display: flex;
         background-image: url(../img/banner/akatsuki-capa.webp);
-        
+
         width: 100%;
-        margin: 50px auto;;
+        margin: 50px auto;
+        ;
     }
-    
+
 }
